@@ -1,0 +1,59 @@
+! special
+*.foreground:   #ffffff
+*.background:   #353434
+*.cursorColor:  #ffffff
+
+! black
+*.color0:       #000000 
+*.color8:       #000000
+
+! red
+*.color1:       #ff16b0
+*.color9:       #ff16b0
+
+! green
+*.color2:       #b3f361
+*.color10:      #b3f361
+
+! yellow
+*.color3:       #ffea16
+*.color11:      #ffea16
+
+! blue
+*.color4:       #46bdff 
+*.color12:      #46bdff
+
+! magenta
+*.color5:       #f806fa
+*.color13:      #f806fa
+
+! cyan
+*.color6:       #59e1e3
+*.color14:      #6be4e6
+
+! white
+*.color7:       #ffffff 
+*.color15:      #ffffff
+
+! bacground and foreground
+
+! -- REMOVE SCROLLBAR -- !
+URxvt.scrollBar: false
+
+!-- FONTS -- !
+URxvt.font: xft:Consolas ligaturized v2:style=Regular
+
+! -- PERL SCRIPTS -- !
+URxvt.perl-ext-common: default,matcher,resize-font
+
+! -- CLICKABLE URLS -- !
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+! -- BORDER -- !
+URxvt.internalBorder: 20
+
+! -- Keybindings for copy/paste (ctrl+alt) -- !
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
