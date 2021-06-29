@@ -1,4 +1,4 @@
-#dotfiles
+# dotfiles
 
 ![alt text](https://github.com/ThomasTraineau/Dotfiles/blob/main/bspwmRice.png)
 
