@@ -1,0 +1,64 @@
+[colors]
+;background = ${xrdb:color0:#222}
+background = #5531a069
+background-alt = #444
+;foreground = ${xrdb:color7:#222}
+foreground = #AAdfdfdf
+foreground-alt = #555
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[bar/right_bar]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 10%
+height = 27
+offset-x = 85%
+offset-y = 0.5%
+radius = 6.0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 2
+line-color = #f00
+
+border-size = 4
+border-color = #00000000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = Montserrat:style=Regular:size=10;3
+
+modules-center = down-speed up-speed
+
+[module/network]
+type = internal/network
+interface = wlp1s0
+ping-interval = 3
+
+
+[module/up-speed]
+inherit = module/network
+
+format-connected-prefix-foreground = ${colors.teal}
+format-connected-overline = ${colors.teal}
+format-connected-padding = 0
+
+label-connected = %{T0}%upspeed:9%%{T-}
+label-padding-left = 0
+
+[module/down-speed]
+inherit = module/network
+
+format-connected-prefix-foreground = ${colors.green}
+format-connected-overline = ${colors.green}
+format-connected-padding = 0
+
+label-connected = %{T0}%downspeed:9%%{T-}
+label-padding-left = 0
