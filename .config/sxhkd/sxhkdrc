@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + @space
-	~/.config/rofi/launchers/colorful/launcher.sh
+	~/.config/rofi/launchers/misc/launcher.sh
 
 # firefox
 super + {e}
@@ -18,9 +18,21 @@ super + {e}
 super + {g}
 	scrot -s 
 
+# file manager
+super + {n}
+	nautilus
+
+# clipboard manager
+super + {p}
+	gpaste-client ui
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+# relaunch dunst
+super + alt + {d}
+	pkill dunst && dunst
 
 #
 # bspwm hotkeys
@@ -71,7 +83,7 @@ super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
-super + {_,shift + }c
+super + {_,shift + }u
 	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
@@ -134,14 +146,18 @@ super + {Left,Down,Up,Right}
 
 # volume control
 XF86AudioLowerVolume
- 	pamixer --allow-boost -d 3
+	~/scripts/volumeControl.sh down
 XF86AudioRaiseVolume
- 	pamixer --allow-boost -i 3
+	~/scripts/volumeControl.sh up
 XF86AudioMute
  	pamixer -t
 
 # brightness control
 XF86MonBrightnessDown
-	backlight_control -10
+	~/scripts/brightnessControl.sh down
 XF86MonBrightnessUp
-	backlight_control +10	
+	~/scripts/brightnessControl.sh up
+
+# touchpad
+XF86TouchpadToggle
+	~/scripts/touchpadControl.sh
